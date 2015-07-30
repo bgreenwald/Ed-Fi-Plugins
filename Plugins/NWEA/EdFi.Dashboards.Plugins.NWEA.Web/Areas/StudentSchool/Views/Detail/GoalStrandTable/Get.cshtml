@@ -1,0 +1,36 @@
+﻿@using System.Collections.Generic
+@using Cassette.Views
+@using EdFi.Dashboards.Presentation.Core.Models.Shared
+@using EdFi.Dashboards.Core.Providers.Context
+@model EdFi.Dashboards.Resources.Models.CustomGrid.GridTable
+
+@{
+    const string uniqueIdentifier = "GS";
+    var studentUSI = EdFiDashboardContext.Current.StudentUSI.GetValueOrDefault();
+    var metricVariantId = EdFiDashboardContext.Current.MetricVariantId.GetValueOrDefault();
+    var edfiGridModel = new EdFiGridModel
+    {
+        DisplayAddRemoveColumns = false,
+        DisplayInteractionMenu = true,
+        FixedHeight = 10,
+        GridName = "Metric" + uniqueIdentifier + metricVariantId,
+        GridTable = Model,
+        SizeToWindow = false,
+        UniqueTableName = "Metric" + uniqueIdentifier + metricVariantId,
+        DefaultSortColumn = 1,
+        LegendViewNames = new List<string> { "GoalStrands" },
+    };
+}
+
+<div id="GoalStrandTable@(metricVariantId)">
+    <script>
+        analyticsManager.trackDrilldown('GoalStrandTable', '@(metricVariantId)', '@(studentUSI)');
+        $("#Metric@(uniqueIdentifier+metricVariantId)-EdFiGrid-interaction-custom").append($("#buttonExportAll@(uniqueIdentifier)-@(metricVariantId)"));
+        $("#buttonExportAll@(uniqueIdentifier)-@(metricVariantId)").show();
+    </script>
+    <a href="@Url.Action("Get", "GoalStrandsExport")" id="buttonExportAll@(uniqueIdentifier)-@(metricVariantId)" class="btn" style="display:none;"><i class="icon-floppy"></i> EXPORT ALL</a>
+    <a href="@Url.Action("Get", "GoalStrandsExport")" class="hidden">Export goal strands for metric @(metricVariantId) to csv</a>
+    @{Html.RenderPartial("EdFiGrid", model: edfiGridModel);}
+</div>
+
+

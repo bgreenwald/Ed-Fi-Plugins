@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA7F8B30-050A-449D-BA89-C9FF93D23DEF}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EdFi.Dashboards.Plugins.NWEA.Web</RootNamespace>
+    <AssemblyName>EdFi.Dashboards.Plugins.NWEA.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\Ed-Fi-Apps\Application\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxMin">
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\AjaxMin.4.84.4790.14417\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="Cassette, Version=2.2.2.34609, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Cassette.2.2.2\lib\net40-client\Cassette.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Cassette.Aspnet, Version=2.2.2.34610, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Cassette.Aspnet.2.2.2\lib\net40\Cassette.Aspnet.dll</HintPath>
+    </Reference>
+    <Reference Include="Cassette.Views, Version=2.2.2.34610, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Cassette.Views.2.2.2\lib\net40\Cassette.Views.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Castle.Core.2.5.1\lib\NET35\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Facilities.Synchronize">
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Castle.Windsor.2.5.1\lib\NET40\Castle.Facilities.Synchronize.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Castle.Windsor.2.5.1\lib\NET40\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Microsoft.AspNet.Razor.1.0.20105.408\lib\net40\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Staff\Controllers\AssessmentDetailsController.cs" />
+    <Compile Include="Areas\Staff\Views\AssessmentDetails\Get.generated.cs">
+      <DependentUpon>Get.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\StudentSchool\Controllers\Detail\GoalStrandsExportController.cs" />
+    <Compile Include="Areas\StudentSchool\Controllers\Detail\GoalStrandTableController.cs" />
+    <Compile Include="Areas\StudentSchool\Views\Detail\GoalStrandTable\Get.generated.cs">
+      <DependentUpon>Get.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\StudentSchool\Views\DomainMetric\Get.generated.cs">
+      <DependentUpon>Get.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CassetteConfiguration.cs" />
+    <Compile Include="Marker_EdFi_Dashboards_Plugins_NWEA_Web.cs" />
+    <Compile Include="PluginManifest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\CastleWindsor\Installer.cs" />
+    <Compile Include="Utilities\MetricRendering\RazorGeneratorMetricTemplatesPathProvider.cs" />
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\AggregateMetric.Level1.MetricId_100.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AggregateMetric.Level1.MetricId_100.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\ContainerMetric.Level2.NullValue.MetricId_45001.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContainerMetric.Level2.NullValue.MetricId_45001.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.Enabled.MetricId_45002.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GranularMetric.Level3.Enabled.MetricId_45002.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.Enabled.MetricId_45003.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GranularMetric.Level3.Enabled.MetricId_45003.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.Enabled.MetricId_45004.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GranularMetric.Level3.Enabled.MetricId_45004.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.Enabled.MetricId_45005.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GranularMetric.Level3.Enabled.MetricId_45005.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.Enabled.MetricId_45006.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GranularMetric.Level3.Enabled.MetricId_45006.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.Enabled.MetricId_45007.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GranularMetric.Level3.Enabled.MetricId_45007.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.NullValue.MetricId_45002.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GranularMetric.Level3.NullValue.MetricId_45002.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.NullValue.MetricId_45003.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GranularMetric.Level3.NullValue.MetricId_45003.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.NullValue.MetricId_45004.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GranularMetric.Level3.NullValue.MetricId_45004.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.NullValue.MetricId_45005.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GranularMetric.Level3.NullValue.MetricId_45005.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.NullValue.MetricId_45006.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GranularMetric.Level3.NullValue.MetricId_45006.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.NullValue.MetricId_45007.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GranularMetric.Level3.NullValue.MetricId_45007.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EdFiGridLegendGoalStrands.generated.cs">
+      <DependentUpon>EdFiGridLegendGoalStrands.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Images\star.png" />
+    <EmbeddedResource Include="Content\Stylesheets\appearance.css">
+      <DependentUpon>appearance.scss</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Scripts\Application\EdFiGridCellHandler.js" />
+    <EmbeddedResource Include="Content\Scripts\Application\EdFiGridHtmlTemplateHelperExtension.js" />
+    <EmbeddedResource Include="Content\HtmlTemplates\EdFiGrid\goalStrandCellTemplate.htm" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EdFiGridLegendGoalStrands.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EdFiGridLegendGoalStrands.generated.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Common\EdFi.Dashboards.Common.csproj">
+      <Project>{5138f45d-eb07-4733-97e7-c761832bdc07}</Project>
+      <Name>EdFi.Dashboards.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Core\EdFi.Dashboards.Core.csproj">
+      <Project>{6492b293-e115-4e1d-9b08-d7c798673f40}</Project>
+      <Name>EdFi.Dashboards.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Infrastructure\EdFi.Dashboards.Infrastructure.csproj">
+      <Project>{0c2cfa02-99c5-4bc1-8ebf-aa9eb75eeb3a}</Project>
+      <Name>EdFi.Dashboards.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Metric.Rendering\EdFi.Dashboards.Metric.Rendering.csproj">
+      <Project>{1e4e9e74-89aa-4053-83f1-f2a53c31d749}</Project>
+      <Name>EdFi.Dashboards.Metric.Rendering</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Metric.Resources.Models\EdFi.Dashboards.Metric.Resources.Models.csproj">
+      <Project>{d6e84ca6-8494-4f3c-90b5-2b868dde7a6c}</Project>
+      <Name>EdFi.Dashboards.Metric.Resources.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Presentation.Architecture\EdFi.Dashboards.Presentation.Architecture.csproj">
+      <Project>{41a9c660-fcfe-4920-bff1-3019c434af91}</Project>
+      <Name>EdFi.Dashboards.Presentation.Architecture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Presentation.Core\EdFi.Dashboards.Presentation.Core.csproj">
+      <Project>{08ebf714-4e5a-4655-ade5-8a16e5665c5a}</Project>
+      <Name>EdFi.Dashboards.Presentation.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Resource.Models.Common\EdFi.Dashboards.Resource.Models.Common.csproj">
+      <Project>{b9977f25-9c76-4585-b52b-0826255f3318}</Project>
+      <Name>EdFi.Dashboards.Resource.Models.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Resources.Models\EdFi.Dashboards.Resources.Models.csproj">
+      <Project>{3c848d33-b28b-4690-be41-84eddf1bbb23}</Project>
+      <Name>EdFi.Dashboards.Resources.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Resources.Security.Common\EdFi.Dashboards.Resources.Security.Common.csproj">
+      <Project>{a8af4718-41c9-4307-97b5-33f63111c76b}</Project>
+      <Name>EdFi.Dashboards.Resources.Security.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Resources\EdFi.Dashboards.Resources.csproj">
+      <Project>{6ea4750a-8c3c-4111-b9a4-f35f5ef436ed}</Project>
+      <Name>EdFi.Dashboards.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.SecurityTokenService.Authentication\EdFi.Dashboards.SecurityTokenService.Authentication.csproj">
+      <Project>{dba5bfc2-b479-418e-84e9-44d39e1651d9}</Project>
+      <Name>EdFi.Dashboards.SecurityTokenService.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdFi.Dashboards.Plugins.NWEA.Resources.Models\EdFi.Dashboards.Plugins.NWEA.Resources.Models.csproj">
+      <Project>{43546c8c-17cb-4435-b968-eb62a2fbac16}</Project>
+      <Name>EdFi.Dashboards.Plugins.NWEA.Resources.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdFi.Dashboards.Plugins.NWEA.Resources\EdFi.Dashboards.Plugins.NWEA.Resources.csproj">
+      <Project>{e89b9ac2-741d-47aa-af12-d69e4e5593ee}</Project>
+      <Name>EdFi.Dashboards.Plugins.NWEA.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\StudentSchool\Views\Detail\GoalStrandTable\Get.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Get.generated.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Stylesheets\appearance.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\StudentSchool\Views\DomainMetric\Get.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Get.generated.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Staff\Views\AssessmentDetails\Get.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Get.generated.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\AggregateMetric.Level1.MetricId_100.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>AggregateMetric.Level1.MetricId_100.generated.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\ContainerMetric.Level2.NullValue.MetricId_45001.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ContainerMetric.Level2.NullValue.MetricId_45001.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.Enabled.MetricId_45002.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GranularMetric.Level3.Enabled.MetricId_45002.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.Enabled.MetricId_45003.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GranularMetric.Level3.Enabled.MetricId_45003.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.Enabled.MetricId_45004.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GranularMetric.Level3.Enabled.MetricId_45004.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.Enabled.MetricId_45005.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GranularMetric.Level3.Enabled.MetricId_45005.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.Enabled.MetricId_45006.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GranularMetric.Level3.Enabled.MetricId_45006.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.Enabled.MetricId_45007.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GranularMetric.Level3.Enabled.MetricId_45007.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.NullValue.MetricId_45002.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GranularMetric.Level3.NullValue.MetricId_45002.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.NullValue.MetricId_45003.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GranularMetric.Level3.NullValue.MetricId_45003.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.NullValue.MetricId_45004.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GranularMetric.Level3.NullValue.MetricId_45004.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.NullValue.MetricId_45005.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GranularMetric.Level3.NullValue.MetricId_45005.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.NullValue.MetricId_45006.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GranularMetric.Level3.NullValue.MetricId_45006.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MetricTemplates\StudentSchool\Metric\GranularMetric.Level3.NullValue.MetricId_45007.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GranularMetric.Level3.NullValue.MetricId_45007.generated.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60442</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60406/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PreBuildEvent>echo ********Resetting IIS to free up plugin dlls before copy**********
+iisreset</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>echo ***Copying plugins to Presentation.Web\Plugins folder. ***
+robocopy $(TargetDir)\ $(SolutionDir)EdFi.Dashboards.Presentation.Web\Plugins\ EdFi.Dashboards.Plugins.NWEA.*.dll /IS /IT /MIR /XF EdFi.Dashboards.Plugins.*.Resources.Tests.dll
+REM Supress error states 1-3, which are really success messages
+IF %25ERRORLEVEL%25 LEQ 3 cmd /c "exit /b 0"
+echo ***Finished copying plugins. ***
+
+echo ***Copying plugins to PublishedWebsites folder:  $(OutDir)_PublishedWebsites\EdFi.Dashboards.Presentation.Web\Plugins ***
+if exist "$(OutDir)_PublishedWebsites\EdFi.Dashboards.Presentation.Web" (
+                 robocopy $(TargetDir)\ $(OutDir)_PublishedWebsites\EdFi.Dashboards.Presentation.Web\Plugins\ EdFi.Dashboards.Plugins.*.dll /IS /IT /XF EdFi.Dashboards.Plugins.*.Resources.Tests.dll
+                  REM Supress error states 1-3, which are really success messages
+                  IF %25ERRORLEVEL%25 LEQ 3 cmd /c "exit /b 0"
+                 echo Copied Content to Published Websites directory
+) ELSE (
+	echo Could not find Published Websites directory
+)
+echo ***Done copying plugins to PublishedWebsites folder.***</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

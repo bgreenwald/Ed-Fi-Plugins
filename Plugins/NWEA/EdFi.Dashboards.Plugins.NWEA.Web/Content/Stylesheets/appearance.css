@@ -1,0 +1,62 @@
+td.EdFiGrid-legend-table-image {
+  padding-bottom: 5px; }
+
+.EdFiGrid-legend-circle {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: block;
+  color: #fff;
+  font-size: 12pt;
+  line-height: 20px;
+  text-align: center;
+  margin: 0px auto;
+  text-decoration: none; }
+
+.EdFiGrid-legend-square {
+  width: 20px;
+  height: 20px;
+  display: block;
+  color: #fff;
+  font-size: 12pt;
+  line-height: 20px;
+  text-align: center;
+  margin: 0px auto;
+  text-decoration: none; }
+
+.EdFiGrid-legend-rhombus {
+  height: 20px;
+  width: 20px;
+  -webkit-transform: skew(-15deg);
+  -moz-transform: skew(-15deg);
+  transform: skew(-15deg);
+  display: block;
+  color: #fff;
+  font-size: 12pt;
+  line-height: 20px;
+  text-align: center;
+  margin: 0px auto;
+  text-decoration: none; }
+
+.EdFiGrid-legend-verygood {
+  background-color: #09662f;
+  background-image: url("~/PluginContent/EdFi.Dashboards.Plugins.NWEA.Web/Images/star.png");
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.EdFiGrid-legend-good {
+  background-color: #09662f; }
+
+.EdFiGrid-legend-caution {
+  background-color: #957013;
+  background-image: url("~/PluginContent/EdFi.Dashboards.Plugins.NWEA.Web/Images/star.png");
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.EdFiGrid-legend-bad {
+  background-color: #957013; }
+
+.EdFiGrid-legend-verybad {
+  background-color: #b30002; }
+
+/*# sourceMappingURL=appearance.css.map */

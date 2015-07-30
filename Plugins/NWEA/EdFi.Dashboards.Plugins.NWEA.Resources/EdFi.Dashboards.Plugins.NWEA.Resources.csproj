@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E89B9AC2-741D-47AA-AF12-D69E4E5593EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EdFi.Dashboards.Plugins.NWEA.Resources</RootNamespace>
+    <AssemblyName>EdFi.Dashboards.Plugins.NWEA.Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\Ed-Fi-Apps\Application\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Castle.Core.2.5.1\lib\NET35\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Facilities.Synchronize">
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Castle.Windsor.2.5.1\lib\NET40\Castle.Facilities.Synchronize.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\..\..\Ed-Fi-Apps\Application\packages\Castle.Windsor.2.5.1\lib\NET40\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Marker_EdFi_Dashboards_Plugins_NWEA_Resources.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Staff\AssessmentBenchmarkDetailsProvider.cs" />
+    <Compile Include="StudentSchool\Detail\GoalStrandService.cs" />
+    <Compile Include="StudentSchool\Detail\StudentMetricAssessmentHistoricalService.cs" />
+    <Compile Include="Utilities\CastleWindsor\ResourcesInstaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Common\EdFi.Dashboards.Common.csproj">
+      <Project>{5138f45d-eb07-4733-97e7-c761832bdc07}</Project>
+      <Name>EdFi.Dashboards.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Data\EdFi.Dashboards.Data.csproj">
+      <Project>{2d634e95-52f6-404d-89af-ca13c7c995d1}</Project>
+      <Name>EdFi.Dashboards.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Metric.Resources.Models\EdFi.Dashboards.Metric.Resources.Models.csproj">
+      <Project>{d6e84ca6-8494-4f3c-90b5-2b868dde7a6c}</Project>
+      <Name>EdFi.Dashboards.Metric.Resources.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Metric.Resources\EdFi.Dashboards.Metric.Resources.csproj">
+      <Project>{83928965-af03-4518-9940-12bef4bc079d}</Project>
+      <Name>EdFi.Dashboards.Metric.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Presentation.Core\EdFi.Dashboards.Presentation.Core.csproj">
+      <Project>{08ebf714-4e5a-4655-ade5-8a16e5665c5a}</Project>
+      <Name>EdFi.Dashboards.Presentation.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Resources.Models\EdFi.Dashboards.Resources.Models.csproj">
+      <Project>{3c848d33-b28b-4690-be41-84eddf1bbb23}</Project>
+      <Name>EdFi.Dashboards.Resources.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Resources.Security.Common\EdFi.Dashboards.Resources.Security.Common.csproj">
+      <Project>{a8af4718-41c9-4307-97b5-33f63111c76b}</Project>
+      <Name>EdFi.Dashboards.Resources.Security.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.Resources\EdFi.Dashboards.Resources.csproj">
+      <Project>{6ea4750a-8c3c-4111-b9a4-f35f5ef436ed}</Project>
+      <Name>EdFi.Dashboards.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Ed-Fi-Core\Application\EdFi.Dashboards.SecurityTokenService.Authentication\EdFi.Dashboards.SecurityTokenService.Authentication.csproj">
+      <Project>{dba5bfc2-b479-418e-84e9-44d39e1651d9}</Project>
+      <Name>EdFi.Dashboards.SecurityTokenService.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdFi.Dashboards.Plugins.NWEA.Data\EdFi.Dashboards.Plugins.NWEA.Data.csproj">
+      <Project>{98f0a5a5-e34a-4669-a07e-9d8ff24c01dd}</Project>
+      <Name>EdFi.Dashboards.Plugins.NWEA.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdFi.Dashboards.Plugins.NWEA.Resources.Models\EdFi.Dashboards.Plugins.NWEA.Resources.Models.csproj">
+      <Project>{43546c8c-17cb-4435-b968-eb62a2fbac16}</Project>
+      <Name>EdFi.Dashboards.Plugins.NWEA.Resources.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

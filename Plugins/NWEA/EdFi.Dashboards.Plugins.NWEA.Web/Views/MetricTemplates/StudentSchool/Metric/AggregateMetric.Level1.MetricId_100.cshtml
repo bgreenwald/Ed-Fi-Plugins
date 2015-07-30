@@ -1,0 +1,34 @@
+﻿@model AggregateMetric
+@{
+    //Define the ParentContainerMetricId to propagate fo the unique columns.
+    //This si needed because we have "Complex tables" meaning colspans that then need unique ids in the headers and matching the cells in the rows below with the same headers="uniqueColumnId". 
+    this.SetMetricRenderingContextValue("ParentContainerMetricId", Model.MetricId);
+    this.SetMetricRenderingContextValue("colCount", 6);
+} 
+<!-- Inline Style is left intentionally in the MetricTemplate to provide a easyer way to override.-->
+<table summary="This table displays metrics regarding @(Model.DisplayName).">
+<thead>
+	<tr id="vMetric@(Model.MetricVariantId)" data-metric-id="@(Model.MetricId)" data-metric-variant-id="@(Model.MetricVariantId)">
+		<th id="MetricName@(this.GetMetricRenderingContextValue("ParentContainerMetricId"))" style="width: 35%;" title="@Model.ToolTip">
+			<span id="vMetricVariantId@(Model.MetricVariantId)" class="metricId">
+				Benchmark Assessments
+			</span>
+		</th>
+		<th id="MetricGoal@(this.GetMetricRenderingContextValue("ParentContainerMetricId"))" style="width: 13%;">
+			RIT Score
+		</th>
+		<th id="MetricEnrollment@(this.GetMetricRenderingContextValue("ParentContainerMetricId"))" style="width: 13%;" title="">
+			Standard Error
+		</th>
+		<th id="MetricDetails@(this.GetMetricRenderingContextValue("ParentContainerMetricId"))" style="width: 13%;" style="text-align:center;">
+			Percentile Rank
+		</th>
+		<th id="MetricDetails@(this.GetMetricRenderingContextValue("ParentContainerMetricId"))" style="width: 13%;" style="text-align:center;">
+			Trend
+		</th>
+		<th id="MetricDetails@(this.GetMetricRenderingContextValue("ParentContainerMetricId"))" style="width: 13%;" style="text-align:center;">
+			Details
+		</th>
+	</tr>
+</thead>
+<tbody>

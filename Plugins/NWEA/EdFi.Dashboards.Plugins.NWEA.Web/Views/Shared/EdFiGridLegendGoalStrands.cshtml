@@ -1,0 +1,82 @@
+﻿@using System.Collections.Generic
+@using EdFi.Dashboards.Presentation.Core.Models.Shared
+@{
+    var legendItemsV4 = new List<EdFiGridLegendModel>
+        {
+            new EdFiGridLegendModel
+                {
+                    CssClass = "EdFiGrid-legend-circle EdFiGrid-legend-verygood",
+                    Text = "Hi: %ile > 66",
+                },
+            new EdFiGridLegendModel
+                {
+                    CssClass = "EdFiGrid-legend-circle EdFiGrid-legend-good",
+                    Text = "Avg: %ile 33 - 66",
+                },
+            new EdFiGridLegendModel
+                {
+                    CssClass = "EdFiGrid-legend-square EdFiGrid-legend-verybad",
+                    Text = "Lo: %ile < 33",
+                }
+        };
+
+    var legendItems2009 = new List<EdFiGridLegendModel>
+    {
+            new EdFiGridLegendModel
+                {
+                    CssClass = "EdFiGrid-legend-circle EdFiGrid-legend-verygood",
+                    Text = "Hi: %ile > 80",
+                },
+            new EdFiGridLegendModel
+                {
+                    CssClass = "EdFiGrid-legend-circle EdFiGrid-legend-good",
+                    Text = "HiAvg: %ile 61 - 80",
+                },
+            new EdFiGridLegendModel
+                {
+                    CssClass = "EdFiGrid-legend-rhombus EdFiGrid-legend-caution",
+                    Text = "Avg: %ile 41 - 60",
+                },
+            new EdFiGridLegendModel
+                {
+                    CssClass = "EdFiGrid-legend-rhombus EdFiGrid-legend-bad",
+                    Text = "LoAvg: %ile 21 - 40",
+                },
+            new EdFiGridLegendModel
+                {
+                    CssClass = "EdFiGrid-legend-square EdFiGrid-legend-verybad",
+                    Text = "Lo: %ile < 21",
+                }
+
+    };
+
+}
+    <td>
+    WBM:
+    </td>
+@foreach (var entry in @legendItemsV4)
+{
+
+    <td class="EdFiGrid-legend-table-image">
+        <div class="@entry.CssClass"/>
+    </td>
+    <td class="EdFiGrid-legend-table-text">
+        @entry.Text
+    </td>
+}
+
+</tr>
+<tr>
+    <td>
+        CS:
+    </td>
+    @foreach (var entry in @legendItems2009)
+    {
+
+        <td class="EdFiGrid-legend-table-image">
+            <div class="@entry.CssClass" />
+        </td>
+        <td class="EdFiGrid-legend-table-text">
+            @entry.Text
+        </td>
+    }
